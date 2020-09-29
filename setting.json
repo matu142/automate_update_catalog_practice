@@ -1,9 +1,9 @@
 {
-    "imagefolder": "./supplier_data/images"
-    ,"textfolder": "./supplier_data/descriptions"
+    "imagefolder": "/home/username/supplier-data/images"
+    ,"textfolder": "/home/username/supplier-data/descriptions"
     ,"imageUploadEndpoint" : "http://localhost/upload/"
-    ,"addFruitEndpoint" : "http://localhost/fruit/"
-    ,"pdfpath":"./test.pdf"
+    ,"addFruitEndpoint" : "http://xx.xx.xx.xx/fruits/"
+    ,"pdfpath":"/tmp/processed.pdf"
     ,"mailfrom":"automation@example.com"
     ,"mailto":"username@example.com"
     
