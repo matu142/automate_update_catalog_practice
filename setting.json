@@ -1,5 +1,6 @@
 {
     "imagefolder": "./supplier_data/images"
     ,"textfolder": "./supplier_data/descriptions"
-    ,"imageUploadEndpoint" : "http://xxxxxx/upload/"
+    ,"imageUploadEndpoint" : "http://localhost/upload/"
+    ,"addFruitEndpoint" : "http://localhost/fruit/"
 }
