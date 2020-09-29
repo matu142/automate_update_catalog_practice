@@ -3,4 +3,6 @@
     ,"textfolder": "./supplier_data/descriptions"
     ,"imageUploadEndpoint" : "http://localhost/upload/"
     ,"addFruitEndpoint" : "http://localhost/fruit/"
+    ,"pdfpath":"./test.pdf"
 }
+
