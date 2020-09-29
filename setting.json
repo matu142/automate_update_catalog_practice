@@ -1,4 +1,5 @@
 {
     "imagefolder": "./supplier_data/images"
     ,"textfolder": "./supplier_data/descriptions"
+    ,"imageUploadEndpoint" : "http://xxxxxx/upload/"
 }
