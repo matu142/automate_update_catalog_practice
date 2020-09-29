@@ -5,6 +5,8 @@ import json
 import datetime
 
 from reports import generate_report
+from emails import generate_email
+from emails import send_email
 
 
 def createContent(textfolderpath):
@@ -30,9 +32,17 @@ def main():
 
   PDFFILEPATH=config['pdfpath']
   TEXTFOLDER = config['textfolder']
+  MAILFROM = config['mailfrom']
+  MAILTO = config['mailto']
+  MAILSUBJECT = "Upload Completed - Online Fruit Store"
+  MAILBODY = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
   title = createTitle()
   content = createContent(TEXTFOLDER)
   generate_report(PDFFILEPATH,title,content)
+
+  mail_message = generate_email(MAILFROM,MAILTO,MAILSUBJECT,MAILBODY, PDFFILEPATH)  
+  send_email(mail_message)
+
   
 
 if __name__ == "__main__":

@@ -4,5 +4,9 @@
     ,"imageUploadEndpoint" : "http://localhost/upload/"
     ,"addFruitEndpoint" : "http://localhost/fruit/"
     ,"pdfpath":"./test.pdf"
+    ,"mailfrom":"automation@example.com"
+    ,"mailto":"username@example.com"
+    
+    
 }
 
