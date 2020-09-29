@@ -57,21 +57,18 @@ def main() :
   MAILFROM = config['mailfrom']
   MAILTO = config['mailto']
 
-  while True :
-    print("checking...")
-    if not checkCPUusage(80) :
-      sendErrorMail(MAILFROM, MAILTO, "Error - CPU usage is over 80%")
+  print("checking...")
+  if not checkCPUusage(80) :
+    sendErrorMail(MAILFROM, MAILTO, "Error - CPU usage is over 80%")
 
-    if not checkDiskSpace(20) :
-      sendErrorMail(MAILFROM, MAILTO, "Error - Available disk space is less than 20%")
+  if not checkDiskSpace(20) :
+    sendErrorMail(MAILFROM, MAILTO, "Error - Available disk space is less than 20%")
     
-    if not checkMemoryUsage(500) :
-      sendErrorMail(MAILFROM, MAILTO, "Error - Available memory is less than 500MB")
+  if not checkMemoryUsage(500) :
+    sendErrorMail(MAILFROM, MAILTO, "Error - Available memory is less than 500MB")
 
-    if not checkResolveLocalhost() :
-      sendErrorMail(MAILFROM, MAILTO, "Error - localhost cannot be resolved to 127.0.0.1")
-
-    time.sleep(60)
+  if not checkResolveLocalhost() :
+    sendErrorMail(MAILFROM, MAILTO, "Error - localhost cannot be resolved to 127.0.0.1")
 
 if __name__ == '__main__' :
   main()
