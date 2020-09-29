@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from PIL import Image
 import os
 import json
@@ -29,6 +31,10 @@ def main():
   for curDir, dirs, files in os.walk(INPUTDIR):
   #  print(files)
     for file in files:
+      #operate tiff file only
+      if  not  os.path.splitext(file)[1] == ".tiff":
+        continue
+
       #make filename
       filepath = os.path.join(curDir,file)
       newfilename = os.path.splitext(file)[0] +".jpeg"
