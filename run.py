@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import os
 import json
 import requests
@@ -7,7 +9,8 @@ def addFruit(url, textfilepath) :
   with open(textfilepath, "r") as f:
     #read text file
     name = f.readline().rstrip()
-    weight = int(f.readline().rstrip())
+    weight = f.readline().rstrip()
+    weight_int = weight.split(" ")[0]
     description = f.read().rstrip()
 
     imagefilename = os.path.splitext(os.path.basename(textfilepath))[0] + ".jpeg"
@@ -15,7 +18,7 @@ def addFruit(url, textfilepath) :
     #create request data
     data = {
         "name":name
-        ,"weight": weight
+        ,"weight": weight_int
         ,"description":description
         ,"image_name" : imagefilename
     }
@@ -29,7 +32,7 @@ def addFruit(url, textfilepath) :
 
 
 def checkExistImageFile(textfilename, imagedir):
-  imagefilepath = os.path.join(imagedir,os.path.splitext(textfilename)[0]+".jpeg")
+  imagefilepath = os.path.join(imagedir,os.path.splitext(os.path.basename(textfilename))[0]+".jpeg")
   return os.path.exists(imagefilepath)
 
 
@@ -50,8 +53,9 @@ def main():
 
     #check exist image file
     if checkExistImageFile(textfilepath, IMAGEDIR):
-      addFruit(APIURL, textfile)
+      addFruit(APIURL, textfilepath)
     else :
+      print(textfile)
       raise Exception("image not found for {}".format(textfile))
 
 
