@@ -16,7 +16,7 @@ def createContent(textfolderpath):
     with open(textfilepath) as f:
       name = f.readline().rstrip()
       weight = f.readline().rstrip()
-      result += "name: {}<br/>weight: {} lbs<br/><br/>".format(name, weight)
+      result += "name: {}<br/>weight: {}<br/><br/>".format(name, weight)
 
   return result
 
